@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Page Summarizer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <main class="popup">
+      <header class="header">
+        <p class="eyebrow">Current Page</p>
+        <h1 id="pageTitle">Loading page title...</h1>
+      </header>
+
+      <section class="controls" aria-label="Summary controls">
+        <label for="summaryType">Summary type</label>
+
+        <select id="summaryType">
+          <option value="standard">Detailed summary</option>
+          <option value="short">3 bullet points</option>
+        </select>
+
+        <button id="summarizeButton" class="primary" type="button">
+          <span id="buttonText">Summarize Page</span>
+          <span id="spinner" class="spinner" aria-hidden="true"></span>
+        </button>
+
+        <div class="buttonGrid">
+          <button id="copyButton" type="button" disabled>Copy</button>
+          <button id="highlightButton" type="button" disabled>Highlight</button>
+          <button id="clearButton" type="button">Clear</button>
+        </div>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="output" class="output" tabindex="0" aria-label="Summary output">
+        <p class="empty">Click Summarize Page to summarize this webpage.</p>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

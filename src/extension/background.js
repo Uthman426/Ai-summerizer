@@ -179,7 +179,7 @@ async function clearCache(url) {
 
 function friendlyError(error) {
   if (String(error.message).includes("Failed to fetch")) {
-    return "Could not reach the Next.js server. Run npm run dev first.";
+    return "Unable to reach server. Please try again.";
   }
 
   return error.message || "Something went wrong.";

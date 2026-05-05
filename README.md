@@ -5,7 +5,7 @@ This project uses the Gemini API through a secure Next.js API route.
 The Chrome extension does not call Gemini directly. Instead, it sends extracted page text to:
 
 ```text
-http://localhost:3000/api/summarize
+https://ai-summerizer-gules.vercel.app/api/summarize
 
 # AI Page Summarizer Chrome Extension
 
@@ -74,46 +74,22 @@ git clone your-repository-url
 cd your-project-folder
 Or download the ZIP from GitHub and extract it.
 
-2. Install Dependencies
-npm install
-3. Add Environment Variables
-Create a .env.local file in the root of the project:
 
-OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_MODEL=gpt-5.2
-Do not commit .env.local to GitHub.
 
-Your .gitignore should include:
-
-.env
-.env.local
-.env.*.local
-node_modules/
-.next/
-4. Start the Local Next.js Server
-npm run dev
-The local API should now be running at:
-
-http://localhost:3000/api/summarize
-Keep this server running while using the extension.
-
-5. Load the Extension in Chrome
+2. Load the Extension in Chrome
 Open Google Chrome.
 Go to:
 chrome://extensions
 Turn on Developer mode.
 Click Load unpacked.
 Select the extension folder inside this project.
-Important: select this folder:
 
-your-project-folder/extension
-Do not select the root project folder.
 
-6. Pin the Extension
+3 Pin the Extension
 Click the puzzle icon in the Chrome toolbar.
 Find AI Page Summarizer.
 Click the pin icon beside it.
-7. Use the Extension
+4 Use the Extension
 Open an article or documentation page.
 Click the AI Page Summarizer extension icon.
 Click Summarize Page.
@@ -145,9 +121,8 @@ Security approach:
 
 The extension does not call OpenAI directly.
 The extension sends extracted text to the local Next.js API route.
-The API route calls OpenAI using process.env.OPENAI_API_KEY.
-The API key stays in .env.local.
-No secrets are hardcoded in extension files.
+The API route calls gemini using https://ai-summerizer-gules.vercel.app/api/summarize process.env.gemini_API_KEY.
+
 Background Service Worker
 Implemented in:
 

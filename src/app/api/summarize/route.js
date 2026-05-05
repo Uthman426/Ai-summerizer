@@ -55,7 +55,7 @@ import { summarizeExtractedText, summarizeUrl } from "../../../lib/summarizer";
 
 export const runtime = "nodejs";
 
-// ✅ Handle CORS preflight (REQUIRED for Chrome extension)
+// Handle CORS preflight (REQUIRED for Chrome extension)
 export async function OPTIONS() {
   return new Response(null, {
     status: 200,
@@ -67,7 +67,7 @@ export async function OPTIONS() {
   });
 }
 
-// ✅ Optional: so browser doesn't show 405
+// Optional: so browser doesn't show 405
 export async function GET() {
   return NextResponse.json({
     success: true,

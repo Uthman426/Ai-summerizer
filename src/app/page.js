@@ -17,7 +17,7 @@ export default function HomePage() {
     setResult(null);
 
     try {
-      const response = await fetch("/api/summarize", {
+      const response = await fetch("https://ai-summerizer-gules.vercel.app/api/summarize", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
